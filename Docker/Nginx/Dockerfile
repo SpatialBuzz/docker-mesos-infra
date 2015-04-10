@@ -38,4 +38,4 @@ USER nobody
 ENTRYPOINT ["/consul-template"]
 
 # Default parameters
-CMD ["-consul", "192.168.33.11:8500", "-template", "/app-nginx.ctmpl:/etc/nginx/sites-enabled/app.conf:/reload-nginx.sh"]
+CMD ["-consul", "192.168.1.111:8500", "-template", "/app-nginx.ctmpl:/etc/nginx/sites-enabled/app.conf:/reload-nginx.sh"]

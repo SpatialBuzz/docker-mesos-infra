@@ -8,7 +8,7 @@ loadbalancer::config::keepalived_instances:
     priority: 101
     auth_type: PASS
     auth_pass: secret
-    virtual_ipaddress: ['192.168.33.20']
+    virtual_ipaddress: ['192.168.1.120']
     track_script: chk_haproxy
     unicast_source_ip: "%{::ipaddress_eth1}"
-    unicast_peers: ['192.168.33.17']
+    unicast_peers: ['192.168.1.117']

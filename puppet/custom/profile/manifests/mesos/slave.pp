@@ -1,6 +1,6 @@
 class profile::mesos::slave (
   $nfs_server = false,
-  $nfs_server_ip = '192.168.33.14'
+  $nfs_server_ip = '192.168.1.114'
 ) {
   
   include profile::mesos::base

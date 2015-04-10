@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    mm1.vm.network :private_network, ip: "192.168.33.11"
+    mm1.vm.network :public_network, ip: "192.168.1.111"
   end
 
   config.vm.define :mm2 do |mm2|
@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    mm2.vm.network :private_network, ip: "192.168.33.12"
+    mm2.vm.network :public_network, ip: "192.168.1.112"
   end
 
   config.vm.define :mm3 do |mm3|
@@ -67,7 +67,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    mm3.vm.network :private_network, ip: "192.168.33.13"
+    mm3.vm.network :public_network, ip: "192.168.1.113"
   end
 
   config.vm.define :ms1 do |ms1|
@@ -90,7 +90,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    ms1.vm.network :private_network, ip: "192.168.33.14"
+    ms1.vm.network :public_network, ip: "192.168.1.114"
   end
 
   config.vm.define :ms2 do |ms2|
@@ -113,7 +113,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    ms2.vm.network :private_network, ip: "192.168.33.15"
+    ms2.vm.network :public_network, ip: "192.168.1.115"
   end
 
   config.vm.define :ms3 do |ms3|
@@ -136,7 +136,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    ms3.vm.network :private_network, ip: "192.168.33.16"
+    ms3.vm.network :public_network, ip: "192.168.1.116"
   end
 
   config.vm.define :ms4 do |ms4|
@@ -159,7 +159,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    ms4.vm.network :private_network, ip: "192.168.33.21"
+    ms4.vm.network :public_network, ip: "192.168.1.121"
   end
 
   config.vm.define :lb1 do |lb1|
@@ -182,7 +182,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "512"]
     end
 
-    lb1.vm.network :private_network, ip: "192.168.33.17"
+    lb1.vm.network :public_network, ip: "192.168.1.117"
   end
 
   config.vm.define :lb2 do |lb2|
@@ -205,7 +205,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "512"]
     end
 
-    lb2.vm.network :private_network, ip: "192.168.33.18"
+    lb2.vm.network :public_network, ip: "192.168.1.118"
   end
 
   config.vm.define :registry do |registry|
@@ -229,7 +229,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "512"]
     end
 
-    registry.vm.network :private_network, ip: "192.168.33.19"
+    registry.vm.network :public_network, ip: "192.168.1.119"
   end
 
 end

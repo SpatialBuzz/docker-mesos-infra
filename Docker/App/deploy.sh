@@ -2,7 +2,7 @@
 
 set -e
 
-marathon="192.168.33.11"
+marathon="192.168.1.111"
 
 curl -X DELETE -H "Content-Type: application/json" http://${marathon}:8080/v2/apps/app-$APP_ENV
 

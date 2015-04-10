@@ -1,7 +1,7 @@
 ---
 profile::mesos::slave::nfs_server: true
-consul::service::cmd: -advertise 192.168.33.14 -join 192.168.33.11
-mesos::slave::listen_address: 192.168.33.14
+consul::service::cmd: -advertise 192.168.1.114 -join 192.168.1.111
+mesos::slave::listen_address: 192.168.1.114
 mesos::slave::options:
   hostname: ms1.localdomain
 mesos::slave::attributes:
