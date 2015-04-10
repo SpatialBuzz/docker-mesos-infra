@@ -3,7 +3,7 @@ consul::service::cmd: -server -advertise 192.168.1.113 -join 192.168.1.111
 mesos::master::listen_address: 192.168.1.113
 mesos::master::options: { quorum: "2", hostname: "mm3.localdomain" }
 zookeeper::id: 3
-zookeeper::client_ip: 192.168.1.112
+zookeeper::client_ip: 192.168.1.113
 zookeeper::datastore: /var/lib/zookeeper
 zookeeper::servers:
   - 192.168.1.111:2888:3888
