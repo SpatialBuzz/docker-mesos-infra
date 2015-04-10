@@ -15,3 +15,11 @@ vagrant up mm1 mm2 mm3
 vagrant up ms1
 vagrant up ms2 ms3 ms4
 vagrant status
+
+pushd Docker/App  
+APP_VERSION=latest APP_ENV=test ./deploy.sh  
+popd
+
+pushd Docker/App  
+APP_VERSION=latest APP_ENV=production ./deploy.sh 
+popd

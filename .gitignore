@@ -4,3 +4,4 @@ jenkins/
 xebia.sublime-project
 xebia.sublime-workspace
 .idea/
+*_id_rsa*

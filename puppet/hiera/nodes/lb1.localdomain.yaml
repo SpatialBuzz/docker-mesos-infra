@@ -11,4 +11,4 @@ loadbalancer::config::keepalived_instances:
     virtual_ipaddress: ['192.168.1.120']
     track_script: chk_haproxy
     unicast_source_ip: "%{::ipaddress_eth1}"
-    unicast_peers: ['192.168.1.118']
+    unicast_peers: ['192.168.1.122']

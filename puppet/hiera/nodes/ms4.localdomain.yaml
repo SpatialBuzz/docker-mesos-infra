@@ -1,6 +1,6 @@
 ---
-consul::service::cmd: -advertise 192.168.1.121 -join 192.168.1.111
-mesos::slave::listen_address: 192.168.1.121
+consul::service::cmd: -advertise 192.168.1.117 -join 192.168.1.111
+mesos::slave::listen_address: 192.168.1.117
 mesos::slave::options:
   hostname: ms4.localdomain
 mesos::slave::attributes:

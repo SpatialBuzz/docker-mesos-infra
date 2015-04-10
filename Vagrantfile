@@ -1,4 +1,12 @@
 Vagrant.configure(2) do |config|
+
+  config.ssh.private_key_path = ["#{ENV['HOME']}/.ssh/id_rsa", "mesos_id_rsa", "#{ENV['HOME']}/.vagrant.d/insecure_private_key"]
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'" # avoids 'stdin: is not a tty' error.
+  config.vm.provision "shell", inline: <<-SCRIPT
+    printf "%s\n" "#{File.read("#{ENV['HOME']}/.ssh/id_rsa.pub")}" >> /home/vagrant/.ssh/authorized_keys
+    printf "%s\n" "#{File.read("mesos_id_rsa.pub")}" >> /home/vagrant/.ssh/authorized_keys
+    chown -R vagrant:vagrant /home/vagrant/.ssh
+  SCRIPT
   
   config.vm.define :mm1 do |mm1|
     mm1.vm.box = "ubuntu/trusty64"
@@ -159,7 +167,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "1024"]
     end
 
-    ms4.vm.network :public_network, bridge: 'en0: Ethernet', ip: "192.168.1.121"
+    ms4.vm.network :public_network, bridge: 'en0: Ethernet', ip: "192.168.1.117"
   end
 
   config.vm.define :lb1 do |lb1|
@@ -182,7 +190,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "512"]
     end
 
-    lb1.vm.network :public_network, bridge: 'en0: Ethernet', ip: "192.168.1.117"
+    lb1.vm.network :public_network, bridge: 'en0: Ethernet', ip: "192.168.1.121"
   end
 
   config.vm.define :lb2 do |lb2|
@@ -205,7 +213,7 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--memory", "512"]
     end
 
-    lb2.vm.network :public_network, bridge: 'en0: Ethernet', ip: "192.168.1.118"
+    lb2.vm.network :public_network, bridge: 'en0: Ethernet', ip: "192.168.1.122"
   end
 
   config.vm.define :registry do |registry|
