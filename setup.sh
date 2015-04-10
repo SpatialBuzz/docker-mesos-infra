@@ -10,6 +10,7 @@ docker build -t 192.168.1.119:5000/app .
 docker push 192.168.1.119:5000/app  
 popd
 
+vagrant up registry
 vagrant up lb1 lb2
 vagrant up mm1 mm2 mm3
 vagrant up ms1
